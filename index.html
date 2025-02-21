@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Loader</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background-color: gray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .loader {
+      width: 20rem;
+      height: 20rem;
+      border-radius: 50%;
+      background-color: blue;
+      position: relative;
+      animation: rotate 1.5s linear infinite;
+    }
+    @keyframes rotate {
+        100%{
+            rotate: -360deg;
+        }
+        
+    }
+    .loader::before {
+      content: "";
+      width: 17rem;
+      border-radius: 50%;
+      background: gray;
+      aspect-ratio: 1;
+      z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .loader::after {
+      content: "";
+      width: 5rem;
+      border-radius: 50%;
+      background: blue;
+      box-shadow: 0 0 1rem blue, 0 0 1.5rem blue, 0 0 2rem blue, 0 0 2.5rem blue,
+        0 0 3rem blue;
+      aspect-ratio: 1;
+      z-index: 1;
+      position: absolute;
+      top: -1.5rem;
+      left: 9.5rem;
+    }
+  </style>
+  <body>
+    <div class="loader"></div>
+  </body>
+</html>
